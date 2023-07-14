@@ -95,8 +95,10 @@ ListView {
             }
             else if(model.type === "enum") {
                 loader.setSource("qrc:/controls/Cus_EnumBox.qml", {
-                                 "editable": model.editable,
-                                 "model": model.model
+                                 "propertyName": model.title,
+                                 "model": model.enum,
+                                 "currentIndex": model.data,
+                                 "editable": model.editable
                                  });
             }
         }

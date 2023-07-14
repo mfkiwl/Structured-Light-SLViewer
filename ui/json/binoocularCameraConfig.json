@@ -14,7 +14,7 @@
             "type" : "number"
          },
          {
-            "data" : 1,
+            "data" : 0,
             "title" : "Noise Filter",
             "type" : "bool"
          }
@@ -62,7 +62,18 @@
          },
          {
             "data" : "DLP4710",
-            "enum" : [ "DLP3010", "DLP4710", "DLP6500" ],
+            "editable" : 0,
+            "enum" : [
+               {
+                  "name" : "DLP3010"
+               },
+               {
+                  "name" : "DLP4710"
+               },
+               {
+                  "name" : "DLP6500"
+               }
+            ],
             "title" : "DLP Evm",
             "type" : "string"
          },
@@ -130,9 +141,28 @@
             "type" : "number"
          },
          {
-            "data" : 6.0,
+            "data" : 9.0,
             "editable" : 1,
             "title" : "Gray Code Bits",
+            "type" : "number"
+         },
+         {
+            "data" : 1.0,
+            "editable" : 1,
+            "enum" : [
+               {
+                  "name" : "PhaseShiftCompletementaryGrayCode"
+               },
+               {
+                  "name" : "ShiftLineGrayCode"
+               }
+            ],
+            "title" : "Restruction Method",
+            "type" : "enum"
+         },
+         {
+            "data" : 6.0,
+            "title" : "Shift Line Bits",
             "type" : "number"
          },
          {
@@ -171,7 +201,7 @@
             "type" : "bool"
          },
          {
-            "data" : 1,
+            "data" : 0,
             "title" : "Gpu Accelerate",
             "type" : "bool"
          },

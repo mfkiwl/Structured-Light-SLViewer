@@ -8,7 +8,9 @@ ComboBox {
     property string propertyName: ""
     signal propertyValueChanged(var propertyName, var val, var propertyType)
 
-    onValueChanged: {
-        propertyValueChanged(propertyName, currentIndex, "number");
+    textRole: "name"
+
+    onActivated: function(index) {
+        propertyValueChanged(propertyName, index , "number");
     }
 }
