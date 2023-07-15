@@ -1,12 +1,12 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
 import Qt.labs.platform 1.1
-import QtQuick.Controls 2.15
-import QtQuick.Timeline 1.0
-import QtQuick.Dialogs
-import QtCore
-import Qt5Compat.GraphicalEffects
-import QtQuick.Controls.Material 2.15
+import QtQuick.Controls 2.12
+//import QtQuick.Timeline 1.0
+import QtQuick.Dialogs 1.2
+//import QtCore
+import QtGraphicalEffects 1.12
+import QtQuick.Controls.Material 2.12
 
 import ImageModel 1.0
 import CodeMakerLauncher 1.0
@@ -15,10 +15,10 @@ import FramelessWindowHelper 1.0
 ApplicationWindow{
     id:mainWindow
     flags: Qt.FramelessWindowHint | Qt.Window | Qt.WindowMinimizeButtonHint
-    width: 1280
-    height: 700
-    minimumWidth: 640
+    minimumWidth: 720
     minimumHeight: 480
+    width: 1080
+    height: 680
     visible: true
     x: Screen.width / 2 - width / 2
     y: Screen.height / 2 - height / 2
@@ -94,7 +94,7 @@ ApplicationWindow{
                 Text {
                     id: text1
                     width: 250
-                    opacity: 0
+                    opacity: 1
                     color: Material.accent
                     text: qsTr("Gray-Phase Encoder Tool")
                     anchors.left: parent.left
@@ -115,7 +115,7 @@ ApplicationWindow{
 
                 Text {
                     id: text3
-                    opacity: 0
+                    opacity: 1
                     text: qsTr("by @Liu Yunhuang")
                     anchors.left: text1.right
                     anchors.right: parent.right
@@ -231,18 +231,6 @@ ApplicationWindow{
                 cache:false
                 antialiasing: true
 
-                DropShadow {
-                    id: shadow
-                    z: -1
-                    anchors.fill: displayImg
-                    horizontalOffset: 5
-                    verticalOffset: 5
-                    radius: 8.0
-                    color: Material.dropShadowColor
-                    source: displayImg
-                    visible: false
-                }
-
                 MouseArea {
                     cursorShape: Qt.OpenHandCursor
                     anchors.fill: displayImg
@@ -257,6 +245,18 @@ ApplicationWindow{
                             displayImg.scale *= 0.9;
                     }
                 }
+            }
+
+            DropShadow {
+                id: shadow
+                z: -1
+                anchors.fill: displayImg
+                horizontalOffset: 5
+                verticalOffset: 5
+                radius: 8.0
+                color: Material.dropShadowColor
+                source: displayImg
+                visible: false
             }
 
             Rectangle {
@@ -1178,11 +1178,11 @@ ApplicationWindow{
                                 codeMakerLauncher.setCounterDirectionMode(isCounterDirectionModeCB.checked);
                                 if(grayCodeBox.checkState === Qt.Checked) {
                                     codeMakerLauncher.startEncoderGrayCode();
-                                    grayListModel.recurseImg("../out/gray/", widthSpinBox.value, heightSpinBox.value);
+                                    grayListModel.recurseImg(String("../out/gray/"), widthSpinBox.value, heightSpinBox.value);
                                 }
                                 if(phaseCodeBox.checkState === Qt.Checked) {
                                     codeMakerLauncher.startEncoderPhaseCode();
-                                    phaseListModel.recurseImg("../out/phase/", widthSpinBox.value, heightSpinBox.value);
+                                    phaseListModel.recurseImg(String("../out/phase/"), widthSpinBox.value, heightSpinBox.value);
                                 }
 
                             }
@@ -1202,7 +1202,7 @@ ApplicationWindow{
                 interactive: true
             }
         }
-
+        /*
         Timeline {
             id: timeline
             animations: [
@@ -1247,6 +1247,7 @@ ApplicationWindow{
                 }
             }
         }
+        */
     }
 }
 

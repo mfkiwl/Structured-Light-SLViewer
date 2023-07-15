@@ -1,6 +1,7 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
+import QtQuick 2.12
+import QtQml 2.12
+import QtQuick.Controls 2.12
+import QtQuick.Controls.Material 2.12
 
 ListView {
     id: root
@@ -56,6 +57,7 @@ ListView {
             text: qsTr(model.title)
             clip: true
             font.underline: true
+            font.bold: true
         }
 
         Loader {
@@ -67,7 +69,7 @@ ListView {
 
         Connections {
             target: loader.item
-            function onPropertyValueChanged(propertyName, val, propertyType) {
+            onPropertyValueChanged: function(propertyName, val, propertyType) {
                 propertyChanged(propertyName, val, propertyType);
             }
         }

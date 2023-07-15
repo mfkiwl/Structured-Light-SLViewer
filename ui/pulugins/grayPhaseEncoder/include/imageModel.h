@@ -17,10 +17,10 @@ class ImageModel : public QAbstractListModel {
     QHash<int, QByteArray> roleNames() const override;
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
-    Q_INVOKABLE void recurseImg(QString &folderUrl, const int imgWidth, const int imgHeight);
-    Q_INVOKABLE void emplace_back(QString &fileName);
-    Q_INVOKABLE int erase(QString &fileName);
-    Q_INVOKABLE void erase(int locIndex);
+    Q_INVOKABLE void recurseImg(const QString &folderUrl, const int imgWidth, const int imgHeight);
+    Q_INVOKABLE void emplace_back(const QString &fileName);
+    Q_INVOKABLE int erase(const QString &fileName);
+    Q_INVOKABLE void erase(const int locIndex);
     Q_INVOKABLE const QList<QString> imgPaths() { return m_imgs; }
 
   private:

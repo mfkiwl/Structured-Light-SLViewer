@@ -2,7 +2,7 @@
 #define __CODE_MAKE_LAUNCHER_H_
 
 #include <QObject>
-#include <QProperty>
+//#include <QProperty>
 
 #include "codeMaker.h"
 

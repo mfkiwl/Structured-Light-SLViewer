@@ -8,13 +8,13 @@ set(CMAKE_AUTOUIC TRUE)
 set(EXPORT_COMPILE_COMMANDS TRUE)
 set(CMAKE_CXX_STANDARD 14)
 
-set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_BUILD_TYPE Debug)
 
+find_package(Qt5 REQUIRED Core Gui Qml Quick Widgets QuickControls2 WebEngine)
 find_package(SLCamera REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(Boost REQUIRED)
-find_package(Qt6 REQUIRED Core Gui Qml Quick Widgets Core5Compat QuickControls2 WebEngineQuick)
 find_package(VTK REQUIRED)
 
 file(GLOB_RECURSE QML ${CMAKE_CURRENT_SOURCE_DIR}/ui/*.qml)
@@ -50,14 +50,13 @@ target_link_libraries(
     ${OpenCV_LIBRARIES}
     ${Boost_LIBRARIES}
     ${SLCamera_LIBRARIES}
-    Qt6::Core
-    Qt6::Gui
-    Qt6::Qml
-    Qt6::Widgets
-    Qt6::Quick
-    Qt6::Core5Compat
-    Qt6::QuickControls2
-    Qt6::WebEngineQuick
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Qml
+    Qt5::Widgets
+    Qt5::Quick
+    Qt5::QuickControls2
+    Qt5::WebEngine
 )
 
 vtk_module_autoinit(

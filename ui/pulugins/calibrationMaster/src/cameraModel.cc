@@ -25,15 +25,15 @@ QVariant CameraModel::data(const QModelIndex &index, int role) const {
   return QVariant();
 }
 
-void CameraModel::emplace_back(QString &imgInfo) {
+void CameraModel::emplace_back(const QString &imgInfo) {
   beginResetModel();
 
-  m_imgs.emplace_back(imgInfo);
+  m_imgs.push_back(imgInfo);
 
   endResetModel();
 }
 
-int CameraModel::erase(QString &imgInfo) {
+int CameraModel::erase(const QString &imgInfo) {
   beginResetModel();
 
   int index = 0;
@@ -61,7 +61,7 @@ void CameraModel::erase(int locIndex) {
   endResetModel();
 }
 
-void CameraModel::recurseImg(QUrl &folderUrl) {
+void CameraModel::recurseImg(const QUrl &folderUrl) {
   beginResetModel();
 
   if (!folderUrl.isValid()) return;
@@ -77,7 +77,7 @@ void CameraModel::recurseImg(QUrl &folderUrl) {
     auto stdPath = static_cast<std::string>(path);
     size_t index = stdPath.find_last_of("\\");
     stdPath.replace(index, 1, "/");
-    m_imgs.emplace_back(QString::fromStdString(stdPath));
+    m_imgs.push_back(QString::fromStdString(stdPath));
   }
 
   endResetModel();

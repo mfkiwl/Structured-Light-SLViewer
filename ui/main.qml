@@ -1,9 +1,10 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
-import Qt.labs.platform
-import QtQuick.Controls 2.15
-import Qt5Compat.GraphicalEffects
-import QtQuick.Controls.Material 2.15
+import QtQml 2.12
+import Qt.labs.platform 1.0
+import QtQuick.Controls 2.12
+import QtGraphicalEffects 1.12
+import QtQuick.Controls.Material 2.12
 
 import FramelessWindowHelper 1.0
 import SLCameraEngine 1.0
@@ -16,8 +17,10 @@ ApplicationWindow {
     flags: Qt.FramelessWindowHint | Qt.Window | Qt.WindowMinimizeButtonHint
     x: Screen.width / 2 - width / 2
     y: Screen.height / 2 - height / 2
-    minimumWidth: 1280
-    minimumHeight: 720
+    minimumWidth: 720
+    minimumHeight: 480
+    width: 1080
+    height: 640
     color: Sys.background
     visible: true
 
@@ -250,19 +253,19 @@ ApplicationWindow {
     Connections {
         target: toolPageLoader.item
 
-        function onFilterCloudPressed(stdThreshold, meanK) {
+        onFilterCloudPressed: function(stdThreshold, meanK) {
             vtkProcessEngine.statisticalOutRemoval(stdThreshold, meanK);
         }
 
-        function onJetDepthColorMap() {
+        onJetDepthColorMap: function() {
             vtkProcessEngine.jetDepthColorMap();
         }
 
-        function onUniformColorMap() {
+        onUniformColorMap: function() {
             colorDialog.open();
         }
 
-        function onCancelColorMap() {
+        onCancelColorMap: function() {
             vtkProcessEngine.cancelColorizeCloud();
         }
     }
@@ -312,7 +315,6 @@ ApplicationWindow {
         }
 
         onChangeCameraPropertyVal: function(propertyName, val, propertyType) {
-            console.log(val)
             if(propertyType === "bool") {
                 slCameraEngine.setBooleanAttribute(propertyName, val);
             }
@@ -487,7 +489,7 @@ ApplicationWindow {
 
     Connections {
         target: welconPageLoader.item
-        function onCameraSelected(cameraJsonPath, cameraPropertyJsonPath, cameraName) {
+        onCameraSelected: function(cameraJsonPath, cameraPropertyJsonPath, cameraName) {
             slCameraEngine.configCamera(cameraJsonPath, cameraName);
             displayBody.cameraJsonSource = cameraPropertyJsonPath;
         }

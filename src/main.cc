@@ -8,7 +8,7 @@
 #include <QQuickVTKInteractiveWidget.h>
 #include <QQmlContext>
 #include <QtWebEngineCore>
-#include <QtWebEngineQuick>
+#include <QtWebEngine>
 
 #include "frameLessWindowHelper.h"
 #include "vtkRenderItem.h"
@@ -28,13 +28,13 @@
 
 int main(int argc, char *argv[])
 {
-    QtWebEngineQuick::initialize();
     QQuickVTKRenderWindow::setupGraphicsBackend();
     QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
     QApplication app(argc, argv);
+    QtWebEngine::initialize();
     app.setApplicationName("SLViewer");
     app.setApplicationDisplayName("SLViewer");
     app.setApplicationVersion("1.0");

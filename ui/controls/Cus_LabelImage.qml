@@ -1,8 +1,8 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
-import Qt5Compat.GraphicalEffects
-import QtQuick.Layouts 1.15
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+import QtQuick.Controls.Material 2.12
+import QtGraphicalEffects 1.12
+import QtQuick.Layouts 1.12
 
 import ImagePaintItem 1.0
 
@@ -87,7 +87,7 @@ Rectangle {
                 anchors.top: parent.top
                 height: parent.height
                 width: height
-                iconSource: "qrc:/pulugins/CalibrationMaster/ui/icon/origin.png"
+                iconSource: "qrc:/pulugins/calibrationMaster/ui/icon/origin.png"
                 toolTipText: qsTr("重置比例")
                 backgroundColor: rootOperateRec.color
                 hoverColor: Material.accent

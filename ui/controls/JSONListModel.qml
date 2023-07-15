@@ -4,7 +4,7 @@
  * Licensed under the MIT licence (http://opensource.org/licenses/mit-license.php)
  */
 
-import QtQuick 2.15
+import QtQuick 2.12
 import "jsonpath.js" as JSONPath
 
 Item {

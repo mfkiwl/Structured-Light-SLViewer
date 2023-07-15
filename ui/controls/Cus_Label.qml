@@ -1,11 +1,13 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+import QtQuick.Controls.Material 2.12
 
 Label {
     verticalAlignment: Text.AlignVCenter
     horizontalAlignment: Text.AlignRight
     clip: true
+    font.bold: true
+    font.pixelSize: 12
 
     Material.theme: Material.Dark
 

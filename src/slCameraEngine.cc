@@ -127,8 +127,8 @@ bool SLCameraEngine::offLineCapture(const QString leftImgPath, const QString rig
     cv::Mat depthColor = (__frameData.__depthMap - minVal) / (maxVal - minVal) * 255;
     depthColor.convertTo(depthColor, CV_8UC1);
     cv::applyColorMap(depthColor, depthColor, cv::COLORMAP_JET);
-    __depthItem->updateImage(QImage(depthColor.data, depthColor.cols, depthColor.rows, QImage::Format_BGR888).copy());
-    __textureItem->updateImage(QImage(__frameData.__textureMap.data, __frameData.__textureMap.cols, __frameData.__textureMap.rows, QImage::Format_BGR888));
+    __depthItem->updateImage(QImage(depthColor.data, depthColor.cols, depthColor.rows, QImage::Format_RGB888).copy());
+    __textureItem->updateImage(QImage(__frameData.__textureMap.data, __frameData.__textureMap.cols, __frameData.__textureMap.rows, QImage::Format_RGB888));
 
     return true;
 }

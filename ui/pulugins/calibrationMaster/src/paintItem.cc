@@ -4,7 +4,7 @@ PaintItem::PaintItem(QQuickItem *parent) : QQuickItem(parent) {
     setFlag(ItemHasContents, true);
     cv::Mat img(1280, 1024, CV_8UC3, cv::Scalar(48, 48, 48));
     m_imageThumb =
-        QImage(img.data, img.cols, img.rows, QImage::Format_BGR888).copy();
+        QImage(img.data, img.cols, img.rows, QImage::Format_BGR30).copy();
 }
 
 void PaintItem::updateImage(const QImage &image) {

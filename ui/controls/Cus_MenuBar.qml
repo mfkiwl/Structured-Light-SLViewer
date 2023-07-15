@@ -1,6 +1,6 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+import QtQuick.Layouts 1.12
 
 Item {
     id: root
@@ -170,11 +170,12 @@ Item {
             font.pointSize: 10
             font.italic: true
             font.bold: true
-            IconImage {
+            Image {
                 anchors.left: parent.right
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
                 anchors.leftMargin: 12
+                width: height
                 source: "qrc:/icons/outline_emoji_emotions_white_36dp.png"
             }
         }

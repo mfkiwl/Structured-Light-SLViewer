@@ -60,15 +60,6 @@
         <file>json/binoocularCameraConfig.json</file>
         <file>json/software.json</file>
         <file>icons/outline_update_white_36dp.png</file>
-        <file>pulugins/CalibrationMaster/ui/CalibrationMaster.qml</file>
-        <file>pulugins/CalibrationMaster/ui/icon/application.ico</file>
-        <file>pulugins/CalibrationMaster/ui/icon/decrease.png</file>
-        <file>pulugins/CalibrationMaster/ui/icon/delete.png</file>
-        <file>pulugins/CalibrationMaster/ui/icon/expand.png</file>
-        <file>pulugins/CalibrationMaster/ui/icon/img.png</file>
-        <file>pulugins/CalibrationMaster/ui/icon/nonExpand.png</file>
-        <file>pulugins/CalibrationMaster/ui/icon/origin.png</file>
-        <file>pulugins/CalibrationMaster/ui/icon/plus.png</file>
         <file>icons/outline_grid_white_36dp.png</file>
         <file>icons/outline_filter_b_and_w_white_36dp.png</file>
         <file>pulugins/grayPhaseEncoder/ui/grayPhaseEncoder.qml</file>
@@ -110,5 +101,6 @@
         <file>icons/ccViewZneg.png</file>
         <file>icons/ccViewZpos.png</file>
         <file>icons/outline_info_white_36dp.png</file>
+        <file>qtquickcontrols2.conf</file>
     </qresource>
 </RCC>

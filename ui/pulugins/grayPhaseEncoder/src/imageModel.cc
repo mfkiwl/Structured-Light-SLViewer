@@ -27,15 +27,15 @@ QVariant ImageModel::data(const QModelIndex &index, int role) const {
   return QVariant();
 }
 
-void ImageModel::emplace_back(QString &imgInfo) {
+void ImageModel::emplace_back(const QString &imgInfo) {
   beginResetModel();
 
-  m_imgs.emplace_back(imgInfo);
+  m_imgs.push_back(imgInfo);
 
   endResetModel();
 }
 
-int ImageModel::erase(QString &imgInfo) {
+int ImageModel::erase(const QString &imgInfo) {
   beginResetModel();
 
   int index = 0;
@@ -55,7 +55,7 @@ int ImageModel::erase(QString &imgInfo) {
   return index;
 }
 
-void ImageModel::erase(int locIndex) {
+void ImageModel::erase(const int locIndex) {
   beginResetModel();
 
   m_imgs.erase(m_imgs.begin() + locIndex);
@@ -63,7 +63,7 @@ void ImageModel::erase(int locIndex) {
   endResetModel();
 }
 
-void ImageModel::recurseImg(QString &folderUrl, const int imgWidth, const int imgHeight) {
+void ImageModel::recurseImg(const QString &folderUrl, const int imgWidth, const int imgHeight) {
   beginResetModel();
 
   if (!folderUrl.size()) return;
@@ -102,11 +102,11 @@ void ImageModel::recurseImg(QString &folderUrl, const int imgWidth, const int im
       cv::imwrite(pathWrite , imgExpand);
       
       QString path = QFileInfo(QString::fromStdString(pathWrite)).absoluteFilePath();
-      m_imgs.emplace_back(path);
+      m_imgs.push_back(path);
     }
     else {
       QString path = QFileInfo(QString::fromStdString(stdPath)).absoluteFilePath();
-      m_imgs.emplace_back(path);
+      m_imgs.push_back(path);
     }
   }
 

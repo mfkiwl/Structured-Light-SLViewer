@@ -1,12 +1,12 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
 import Qt.labs.platform 1.1
-import QtQuick.Controls 2.15
-import QtQuick.Timeline 1.0
-import QtQuick.Dialogs
-import QtCore
-import Qt5Compat.GraphicalEffects
-import QtQuick.Controls.Material 2.15
+import QtQuick.Controls 2.12
+//import QtQuick.Timeline 1.0
+import QtQuick.Dialogs 1.2
+//import QtCore
+import QtGraphicalEffects 1.12
+import QtQuick.Controls.Material 2.12
 
 import CameraModel 1.0
 import PaintItem 1.0
@@ -16,12 +16,14 @@ import FramelessWindowHelper 1.0
 ApplicationWindow{
     id:mainWindow
     flags: Qt.FramelessWindowHint | Qt.Window | Qt.WindowMinimizeButtonHint
-    width: 1280
-    height: 700
+    minimumWidth: 720
+    minimumHeight: 480
+    width: 1080
+    height: 640
     x: Screen.width / 2 - width / 2
     y: Screen.height / 2 - height / 2
-    minimumWidth: 640
-    minimumHeight: 480
+    //minimumWidth: 640
+    //minimumHeight: 480
     visible: true
 
     Material.theme: Material.Dark
@@ -91,7 +93,7 @@ ApplicationWindow{
                 Text {
                     id: text1
                     width: 150
-                    opacity: 0
+                    opacity: 1
                     color: Material.textSelectionColor
                     text: qsTr("Calibrate Tool")
                     anchors.left: parent.left
@@ -112,7 +114,7 @@ ApplicationWindow{
 
                 Text {
                     id: text3
-                    opacity: 0
+                    opacity: 1
                     text: qsTr("by @Liu Yunhuang")
                     anchors.left: text1.right
                     anchors.right: parent.right
@@ -303,18 +305,6 @@ ApplicationWindow{
                 cache:false
                 antialiasing: true
 
-                DropShadow {
-                    id: shadow
-                    z: -1
-                    anchors.fill: displayImg
-                    horizontalOffset: 5
-                    verticalOffset: 5
-                    radius: 8.0
-                    color: Material.dropShadowColor
-                    source: displayImg
-                    visible: false
-                }
-
                 MouseArea {
                     cursorShape: Qt.OpenHandCursor
                     anchors.fill: displayImg
@@ -329,6 +319,18 @@ ApplicationWindow{
                             displayImg.scale *= 0.9;
                     }
                 }
+            }
+
+            DropShadow {
+                id: shadow
+                z: -1
+                anchors.fill: displayImg
+                horizontalOffset: 5
+                verticalOffset: 5
+                radius: 8.0
+                color: Material.dropShadowColor
+                source: displayImg
+                visible: false
             }
 
             Rectangle {
@@ -1328,20 +1330,20 @@ ApplicationWindow{
         Connections {
             target: calibrateLaucher
 
-            function onDrawKeyPointsChanged(path) {
+            onDrawKeyPointsChanged: function(path) {
                 displayImg.displayImgURL = path;
                 shadow.visible = true;
             }
 
-            function onErrorReturn(error) {
+            onErrorReturn: function(error) {
                 calibrateError.text = "Error:" + error;
             }
 
-            function onProgressChanged(progress) {
+            onProgressChanged: function(progress) {
                 progressBar.value = progress * 100;
             }
         }
-
+        /*
         Timeline {
             id: timeline
             animations: [
@@ -1386,6 +1388,7 @@ ApplicationWindow{
                 }
             }
         }
+        */
     }
 }
 
