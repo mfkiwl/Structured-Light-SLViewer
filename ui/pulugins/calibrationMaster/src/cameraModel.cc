@@ -1,4 +1,4 @@
-#include "CalibrationMaster/include/cameraModel.h"
+#include "calibrationMaster/include/cameraModel.h"
 
 CameraModel::CameraModel(QObject *parent) : QAbstractListModel(parent) {
   m_roleNames.insert(FileName, "FileName");

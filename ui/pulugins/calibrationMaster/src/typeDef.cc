@@ -1,4 +1,4 @@
-#include "CalibrationMaster/include/typeDef.h"
+#include "calibrationMaster/include/typeDef.h"
 
 using namespace cv;
 

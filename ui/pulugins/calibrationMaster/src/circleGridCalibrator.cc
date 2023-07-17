@@ -1,4 +1,4 @@
-#include "CalibrationMaster/include/circleGridCalibrator.h"
+#include "calibrationMaster/include/circleGridCalibrator.h"
 
 CircleGridCalibrator::CircleGridCalibrator() {}
 

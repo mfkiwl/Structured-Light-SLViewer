@@ -1,4 +1,4 @@
-#include "CalibrationMaster/include/caliPacker.h"
+#include "calibrationMaster/include/caliPacker.h"
 
 CaliPacker::CaliPacker() : m_bundleInfo(nullptr) {}
 

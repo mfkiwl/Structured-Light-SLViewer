@@ -1,4 +1,4 @@
-#include "CalibrationMaster/include/EdgesSubPix.h"
+#include "calibrationMaster/include/edgesSubPix.h"
 #include <cmath>
 
 using namespace cv;

@@ -1,4 +1,4 @@
-#include "grayPhaseEncoder/include/CodeMaker.h"
+#include "grayPhaseEncoder/include/codeMaker.h"
 
 #include <fstream>
 #include <strstream>

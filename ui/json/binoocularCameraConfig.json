@@ -14,7 +14,7 @@
             "type" : "number"
          },
          {
-            "data" : 0,
+            "data" : 1,
             "title" : "Noise Filter",
             "type" : "bool"
          }
@@ -111,7 +111,7 @@
             "type" : "number"
          },
          {
-            "data" : 0.89999997615814209,
+            "data" : 0.40000000596046448,
             "editable" : 1,
             "title" : "Light Strength",
             "type" : "number"
@@ -123,13 +123,13 @@
             "type" : "number"
          },
          {
-            "data" : 523.0,
+            "data" : 1632.0,
             "editable" : 1,
             "title" : "Pre Exposure Time",
             "type" : "number"
          },
          {
-            "data" : 93.0,
+            "data" : 288.0,
             "editable" : 1,
             "title" : "Aft Exposure Time",
             "type" : "number"
@@ -141,13 +141,13 @@
             "type" : "number"
          },
          {
-            "data" : 9.0,
+            "data" : 6.0,
             "editable" : 1,
             "title" : "Gray Code Bits",
             "type" : "number"
          },
          {
-            "data" : 1.0,
+            "data" : 0.0,
             "editable" : 1,
             "enum" : [
                {

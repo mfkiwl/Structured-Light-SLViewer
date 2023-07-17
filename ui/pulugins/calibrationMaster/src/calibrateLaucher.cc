@@ -1,4 +1,4 @@
-#include "CalibrationMaster/include/calibrateLaucher.h"
+#include "calibrationMaster/include/calibrateLaucher.h"
 
 CalibrateLaucher::CalibrateLaucher(QObject *parent)
     : m_progress(0), m_imgProcessIndex(0), m_isFinish(false) {

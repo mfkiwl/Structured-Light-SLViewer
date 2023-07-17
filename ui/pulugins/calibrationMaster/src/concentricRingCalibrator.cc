@@ -1,4 +1,4 @@
-#include "CalibrationMaster/include/concentricRingCalibrator.h"
+#include "calibrationMaster/include/concentricRingCalibrator.h"
 
 ConcentricRingCalibrator::ConcentricRingCalibrator() {}
 

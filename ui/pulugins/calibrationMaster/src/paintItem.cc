@@ -1,4 +1,4 @@
-#include "CalibrationMaster/include/paintItem.h"
+#include "calibrationMaster/include/paintItem.h"
 
 PaintItem::PaintItem(QQuickItem *parent) : QQuickItem(parent) {
     setFlag(ItemHasContents, true);

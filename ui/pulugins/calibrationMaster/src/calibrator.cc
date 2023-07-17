@@ -1,4 +1,4 @@
-#include "CalibrationMaster/include/calibrator.h"
+#include "calibrationMaster/include/calibrator.h"
 
 Calibrator::Calibrator() {}
 

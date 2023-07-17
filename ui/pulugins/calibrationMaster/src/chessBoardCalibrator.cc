@@ -1,4 +1,4 @@
-#include "CalibrationMaster/include/chessBoardCalibrator.h"
+#include "calibrationMaster/include/chessBoardCalibrator.h"
 
 ChessBoardCalibrator::ChessBoardCalibrator() {}
 
