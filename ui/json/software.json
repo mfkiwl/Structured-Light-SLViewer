@@ -1,0 +1,46 @@
+{
+  "vtkDisplay": [
+    {
+      "type": "number",
+      "title": "Grid Width",
+      "data": 1000,
+      "editable": 1
+    },
+    {
+      "type": "number",
+      "title": "Grid Height",
+      "data": 1000,
+      "editable": 1
+    },
+    {
+      "type": "bool",
+      "title": "Axes",
+      "data": 1
+    },
+    {
+      "type": "bool",
+      "title": "Grid",
+      "data": 1
+    },
+    {
+      "type": "bool",
+      "title": "Orientation",
+      "data": 1
+    },
+    {
+      "type": "bool",
+      "title": "Color Bar",
+      "data": 1
+    },
+    {
+      "type": "bool",
+      "title": "Mesh",
+      "data": 1
+    },
+    {
+      "type": "bool",
+      "title": "Cloud",
+      "data": 1
+    }
+  ]
+}

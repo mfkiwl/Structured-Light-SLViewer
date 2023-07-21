@@ -1,0 +1,37 @@
+{
+  "vtkDisplay": [
+    {
+      "type": "bool",
+      "title": "Color Bar",
+      "checked": true
+    },
+    {
+      "type": "bool",
+      "title": "Axes",
+      "checked": true
+    },
+    {
+      "type": "bool",
+      "title": "Plane",
+      "checked": true
+    },
+    {
+      "type": "number",
+      "title": "Plane Width",
+      "data": 1000,
+      "editable": true
+    },
+    {
+      "type": "number",
+      "title": "Plane Height",
+      "data": 1000,
+      "editable": true
+    },
+    {
+      "type": "number",
+      "title": "Plane Thickness",
+      "data": 0.2,
+      "editable": true
+    }
+  ]
+}

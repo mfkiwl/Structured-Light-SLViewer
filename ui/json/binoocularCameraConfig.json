@@ -1,0 +1,215 @@
+{
+   "camera" : {
+      "afterProcess" : [
+         {
+            "data" : 500.0,
+            "editable" : 1,
+            "title" : "MinimumDepth",
+            "type" : "number"
+         },
+         {
+            "data" : 1500.0,
+            "editable" : 1,
+            "title" : "MaximumDepth",
+            "type" : "number"
+         },
+         {
+            "data" : 1,
+            "title" : "Noise Filter",
+            "type" : "bool"
+         }
+      ],
+      "info" : [
+         {
+            "data" : "Binocular Camera",
+            "title" : "Camera Name",
+            "type" : "string"
+         },
+         {
+            "data" : "@LiuYunhuang",
+            "title" : "Manufactor",
+            "type" : "string"
+         },
+         {
+            "data" : "@1369215984@qq.com",
+            "title" : "Email",
+            "type" : "string"
+         },
+         {
+            "data" : "0.2mm @1m",
+            "title" : "Accuracy",
+            "type" : "string"
+         },
+         {
+            "data" : "1536",
+            "title" : "Pixels Of Height",
+            "type" : "string"
+         },
+         {
+            "data" : "2048",
+            "title" : "Pixels Of Width",
+            "type" : "string"
+         },
+         {
+            "data" : "600mm",
+            "title" : "True Width",
+            "type" : "string"
+         },
+         {
+            "data" : "500mm",
+            "title" : "True Height",
+            "type" : "string"
+         },
+         {
+            "data" : "DLP4710",
+            "editable" : 0,
+            "enum" : [
+               {
+                  "name" : "DLP3010"
+               },
+               {
+                  "name" : "DLP4710"
+               },
+               {
+                  "name" : "DLP6500"
+               }
+            ],
+            "title" : "DLP Evm",
+            "type" : "string"
+         },
+         {
+            "data" : "Left",
+            "title" : "Left Camera Name",
+            "type" : "string"
+         },
+         {
+            "data" : "Right",
+            "title" : "Right Camera Name",
+            "type" : "string"
+         },
+         {
+            "data" : "Huaray",
+            "title" : "2D Camera Manufactor",
+            "type" : "string"
+         },
+         {
+            "data" : "../out/intrinsic.yml",
+            "title" : "Intrinsic Path",
+            "type" : "string"
+         },
+         {
+            "data" : "../out/extrinsic.yml",
+            "title" : "Extrinsic Path",
+            "type" : "string"
+         }
+      ],
+      "preProcess" : [
+         {
+            "data" : 5.0,
+            "editable" : 1,
+            "title" : "Contrast Threshold",
+            "type" : "number"
+         },
+         {
+            "data" : 0.5,
+            "editable" : 1,
+            "title" : "Light Strength",
+            "type" : "number"
+         },
+         {
+            "data" : 20000.0,
+            "editable" : 1,
+            "title" : "ExposureTime",
+            "type" : "number"
+         },
+         {
+            "data" : 1632.0,
+            "editable" : 1,
+            "title" : "Pre Exposure Time",
+            "type" : "number"
+         },
+         {
+            "data" : 288.0,
+            "editable" : 1,
+            "title" : "Aft Exposure Time",
+            "type" : "number"
+         },
+         {
+            "data" : 4.0,
+            "editable" : 1,
+            "title" : "Phase Shift Times",
+            "type" : "number"
+         },
+         {
+            "data" : 6.0,
+            "editable" : 1,
+            "title" : "Gray Code Bits",
+            "type" : "number"
+         },
+         {
+            "data" : 0.0,
+            "editable" : 1,
+            "enum" : [
+               {
+                  "name" : "PhaseShiftCompletementaryGrayCode"
+               },
+               {
+                  "name" : "ShiftLineGrayCode"
+               }
+            ],
+            "title" : "Restruction Method",
+            "type" : "enum"
+         },
+         {
+            "data" : 6.0,
+            "title" : "Shift Line Bits",
+            "type" : "number"
+         },
+         {
+            "data" : -500.0,
+            "editable" : 1,
+            "title" : "MinimumDisparity",
+            "type" : "number"
+         },
+         {
+            "data" : 500.0,
+            "editable" : 1,
+            "title" : "MaximumDisparity",
+            "type" : "number"
+         },
+         {
+            "data" : 0.10000000149011612,
+            "editable" : 1,
+            "title" : "MaximumMatchCost",
+            "type" : "number"
+         },
+         {
+            "data" : 32.0,
+            "editable" : 1,
+            "title" : "Num of block X",
+            "type" : "number"
+         },
+         {
+            "data" : 8.0,
+            "editable" : 1,
+            "title" : "Num of block Y",
+            "type" : "number"
+         },
+         {
+            "data" : 1,
+            "title" : "Enable Depth Camera",
+            "type" : "bool"
+         },
+         {
+            "data" : 0,
+            "title" : "Gpu Accelerate",
+            "type" : "bool"
+         },
+         {
+            "data" : 1,
+            "title" : "Is Vertical",
+            "type" : "bool"
+         }
+      ]
+   }
+}
