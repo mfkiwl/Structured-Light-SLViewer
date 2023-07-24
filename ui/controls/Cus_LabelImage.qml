@@ -27,8 +27,8 @@ Rectangle {
             objectName: itemObjectName
             x: parent.width / 2 - width / 2
             y: parent.height / 2 - height / 2
-            width: 64
-            height: 64
+            width: parent.width
+            height: width * 0.75
 
             DropShadow {
                 z: -1

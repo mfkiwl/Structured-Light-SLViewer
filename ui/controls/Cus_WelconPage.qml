@@ -9,7 +9,7 @@ import FramelessWindowHelper 1.0
 
 ApplicationWindow {
     id: root
-    flags: Qt.FramelessWindowHint | Qt.CoverWindow | Qt.WindowMinimizeButtonHint | Qt.WindowStaysOnTopHint
+    flags: Qt.FramelessWindowHint | Qt.CoverWindow | Qt.WindowMinimizeButtonHin
     width: 640
     height: 480
     x: Screen.width / 2 - width / 2

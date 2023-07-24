@@ -3,13 +3,11 @@
 ImagePaintItem::ImagePaintItem(QQuickItem *parent) : QQuickItem(parent) {
     setFlag(ItemHasContents, true);
     //m_imageThumb = new QImage(200, 200, QImage::Format_RGB32);
-    //m_imageThumb->fill(QColor(48,);
+    //m_imageThumb->fill(QColor(48, 48, 48);
 }
 
 void ImagePaintItem::updateImage(const QImage &image) {
     m_imageThumb = image;
-    setWidth(480);
-    setHeight(320);
     update();
 }
 

@@ -31,7 +31,7 @@ ListView {
 
     delegate: Rectangle {
         width: ListView.view.width
-        height: 30
+        height: 40
         color: root.backgroundColor
 
         MouseArea {
@@ -59,7 +59,7 @@ ListView {
             clip: true
             font.underline: true
             font.bold: true
-            font.pointSize: 12
+            font.pointSize: 10
         }
 
         Loader {

@@ -10,6 +10,8 @@ Window {
     x: Screen.width / 2 - width / 2
     y: Screen.height / 2 - height / 2
     visible: true
+    title: "cloud filter"
+    flags: Qt.WindowCloseButtonHint | Qt.Dialog
 
     Material.theme: Material.Dark
 

@@ -2,29 +2,28 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QIcon>
+#include <QQmlContext>
+#include <QtWebEngineCore>
+#include <QtWebEngine>
 
 #include <QQuickVTKRenderWindow.h>
 #include <QQuickVTKRenderItem.h>
 #include <QQuickVTKInteractiveWidget.h>
-#include <QQmlContext>
-#include <QtWebEngineCore>
-#include <QtWebEngine>
+#include <vtkPolyDataMapper.h>
+#include <vtkConeSource.h>
 
 #include "frameLessWindowHelper.h"
 #include "vtkRenderItem.h"
 #include "vtkProcessEngine.h"
 #include "slCameraEngine.h"
 #include "imagePaintItem.h"
-
-#include <vtkPolyDataMapper.h>
-#include <vtkConeSource.h>
-
 #include "calibrationMaster/include/calibrateLaucher.h"
 #include "calibrationMaster/include/cameraModel.h"
 #include "calibrationMaster/include/paintItem.h"
-
 #include "grayPhaseEncoder/include/imageModel.h"
 #include "grayPhaseEncoder/include/codeMakerLauncher.h"
+#include "calibrationHandEye/include/caliHandEyeLaunch.h"
+#include "viewPointPlaner/include/viewPointPlannerLaunch.h"
 
 int main(int argc, char *argv[])
 {
@@ -56,9 +55,13 @@ int main(int argc, char *argv[])
     qmlRegisterType<CodeMakerLauncher>("CodeMakerLauncher", 1, 0,
                                       "CodeMakerLauncher");
     qmlRegisterType<SLCameraEngine>("SLCameraEngine", 1, 0,
-                                      "SLCameraEngine");
+                                     "SLCameraEngine");
     qmlRegisterType<ImagePaintItem>("ImagePaintItem", 1, 0,
-                                      "ImagePaintItem");
+                                    "ImagePaintItem");
+    qmlRegisterType<CaliHandEyeLaunch>("CaliHandEyeLaunch", 1, 0,
+                                       "CaliHandEyeLaunch");
+    qmlRegisterType<ViewPointPlannerLaunch>("ViewPointPlannerLaunch", 1, 0,
+                                            "ViewPointPlannerLaunch");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
@@ -79,6 +82,7 @@ int main(int argc, char *argv[])
     textureItem->updateImage(QImage("../ui/icons/baseline_image_white_36dp.png"));
 
     auto slCameraEngine = rootWindow->findChild<SLCameraEngine*>("slCameraEngine");
+    slCameraEngine->bindQMLEngine(&engine);
     slCameraEngine->bindVTKProcessEngine(vtkProcessEngine);
     slCameraEngine->bindDepthAndTextureItem(depthItem, textureItem);
 

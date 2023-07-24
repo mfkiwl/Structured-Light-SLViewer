@@ -16,6 +16,7 @@ class SLCameraEngine : public QObject {
 public:
     SLCameraEngine(QObject* parent = nullptr);
     ~SLCameraEngine();
+    void bindQMLEngine(QQmlApplicationEngine* engine);
     void bindVTKProcessEngine(VTKProcessEngine* vtkProcessEngine);
     void bindDepthAndTextureItem(ImagePaintItem* depthItem, ImagePaintItem* textureItem);
     Q_INVOKABLE void configCamera(const QString jsonPath, const QString cameraName);
@@ -24,17 +25,22 @@ public:
     Q_INVOKABLE bool isConnect();
     Q_INVOKABLE bool capture();
     Q_INVOKABLE bool setDepthCameraEnabled(const bool isEnabale);
-    Q_INVOKABLE bool getStringAttribute(const QString attributeName, QString& val);
-    Q_INVOKABLE bool getNumbericalAttribute(const QString attributeName, double& val);
-    Q_INVOKABLE bool getBooleanAttribute(const QString attributeName, bool& val);
+    Q_INVOKABLE QString getStringAttribute(const QString attributeName);
+    Q_INVOKABLE double getNumbericalAttribute(const QString attributeName);
+    Q_INVOKABLE bool getBooleanAttribute(const QString attributeName);
     Q_INVOKABLE bool setStringAttribute(const QString attributeName, const QString val);
     Q_INVOKABLE bool setNumbericalAttribute(const QString attributeName, const double val);
     Q_INVOKABLE bool setBooleanAttribute(const QString attributeName, const bool val);
     Q_INVOKABLE bool resetCameraConfig();
     Q_INVOKABLE bool updateCamera();
 
-    Q_INVOKABLE bool continueCapture();
-    Q_INVOKABLE bool stopCapture();
+    Q_INVOKABLE bool changeTo2DMode();
+    Q_INVOKABLE bool changeCameraExposureTime(const int exposureTime);
+    Q_INVOKABLE bool continueCapture(const int chanel);
+    Q_INVOKABLE bool stopCapture(const int channel);
+    Q_INVOKABLE QString logCurImg(const int index);
+    Q_INVOKABLE void initHandEyeCaliIntrin();
+
     Q_INVOKABLE bool enableAlignedMode(const bool isEnable);
     Q_INVOKABLE bool enableOfflineMode(const bool isEnable);
 
@@ -43,12 +49,14 @@ public:
     }
 signals:
     void isDetectedChanged();
+    void updateContinuesImg(QImage img);
 private:
     bool offLineCapture(const QString leftImgPath, const QString rightImgPath);
     bool __isAlignedMode;
     bool __isOfflineMode;
     bool __isBinoocular;
     bool __isDetected;
+    QQmlApplicationEngine* __qmlEngine;
     sl::slCamera::SLCamera* __camera;
     VTKProcessEngine* __vtkProcessEngine;
     sl::slCamera::FrameData __frameData;
@@ -57,6 +65,12 @@ private:
     std::thread __isDetectThread;
     ImagePaintItem* __depthItem;
     ImagePaintItem* __textureItem;
+    ImagePaintItem* __continuesItem;
+    ImagePaintItem* __calibrationPaintItem;
+    std::thread __updateImgThread;
+    std::atomic_bool __isFinishUpdateImg;
+    std::mutex __realTimeMutex;
+    cv::Mat __curRealTimeImg;
 };
 
 #endif //!__SL_CAMERA_ENGINE_H_

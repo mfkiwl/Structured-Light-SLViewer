@@ -18,6 +18,8 @@ Item {
 
     signal openCalibrationTool
     signal openGrayPhaseTool
+    signal openHandEyeCalibrationTool
+    signal openViewPointPlannerTool
 
     MouseArea {
         anchors.fill: parent
@@ -73,6 +75,38 @@ Item {
 
                     onHasClicked: {
                         openGrayPhaseTool();
+                    }
+                }
+
+                Cus_IconButton {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: parent.width * 6 / 7
+                    height: parent.width * 6 / 7
+                    enableMouseArea: true
+                    backgroundColor: root.foreColor
+                    hoverColor: root.hoverColor
+                    clickColor: root.clickColor
+                    iconSource: "qrc:/icons/outline_filter_b_and_w_white_36dp.png"
+                    toolTipText: qsTr("手眼标定工具@Author LiuYunhuang")
+
+                    onHasClicked: {
+                        openHandEyeCalibrationTool();
+                    }
+                }
+
+                Cus_IconButton {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: parent.width * 6 / 7
+                    height: parent.width * 6 / 7
+                    enableMouseArea: true
+                    backgroundColor: root.foreColor
+                    hoverColor: root.hoverColor
+                    clickColor: root.clickColor
+                    iconSource: "qrc:/icons/outline_filter_b_and_w_white_36dp.png"
+                    toolTipText: qsTr("视点规划工具@Author LiuYunhuang")
+
+                    onHasClicked: {
+                        openViewPointPlannerTool();
                     }
                 }
             }

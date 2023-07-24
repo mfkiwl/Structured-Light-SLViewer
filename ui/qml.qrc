@@ -62,7 +62,6 @@
         <file>icons/outline_update_white_36dp.png</file>
         <file>icons/outline_grid_white_36dp.png</file>
         <file>icons/outline_filter_b_and_w_white_36dp.png</file>
-        <file>pulugins/grayPhaseEncoder/ui/grayPhaseEncoder.qml</file>
         <file>pulugins/calibrationMaster/ui/icon/application.ico</file>
         <file>pulugins/calibrationMaster/ui/icon/decrease.png</file>
         <file>pulugins/calibrationMaster/ui/icon/delete.png</file>
@@ -79,7 +78,6 @@
         <file>pulugins/grayPhaseEncoder/ui/icon/nonExpand.png</file>
         <file>pulugins/grayPhaseEncoder/ui/icon/origin.png</file>
         <file>pulugins/grayPhaseEncoder/ui/icon/plus.png</file>
-        <file>pulugins/calibrationMaster/ui/calibrationMaster.qml</file>
         <file>icons/outline_videocam_off_white_36dp.png</file>
         <file>icons/outline_restart_alt_white_36dp.png</file>
         <file>controls/Cus_WelconPage.qml</file>
@@ -102,5 +100,36 @@
         <file>icons/ccViewZpos.png</file>
         <file>icons/outline_info_white_36dp.png</file>
         <file>qtquickcontrols2.conf</file>
+        <file>pulugins/calibrationHandEye/ui/icon/application.ico</file>
+        <file>pulugins/calibrationHandEye/ui/icon/decrease.png</file>
+        <file>pulugins/calibrationHandEye/ui/icon/delete.png</file>
+        <file>pulugins/calibrationHandEye/ui/icon/expand.png</file>
+        <file>pulugins/calibrationHandEye/ui/icon/img.png</file>
+        <file>pulugins/calibrationHandEye/ui/icon/nonExpand.png</file>
+        <file>pulugins/calibrationHandEye/ui/icon/origin.png</file>
+        <file>pulugins/calibrationHandEye/ui/icon/plus.png</file>
+        <file>pulugins/calibrationHandEye/ui/icon/baseline_save_as_white_36dp.png</file>
+        <file>pulugins/calibrationHandEye/ui/icon/baseline_settings_white_36dp.png</file>
+        <file>pulugins/grayPhaseEncoder/ui/GrayPhaseEncoder.qml</file>
+        <file>pulugins/calibrationMaster/ui/CalibrationMaster.qml</file>
+        <file>pulugins/calibrationHandEye/ui/AutoCalibrationHandEye.qml</file>
+        <file>pulugins/calibrationHandEye/ui/ConnectIndicator.qml</file>
+        <file>pulugins/calibrationHandEye/ui/ManuaCalibrationHandEye.qml</file>
+        <file>pulugins/calibrationHandEye/ui/WelconHandEye.qml</file>
+        <file>pulugins/calibrationHandEye/ui/StepMenu.qml</file>
+        <file>pulugins/calibrationHandEye/ui/CameraCheckWindow.qml</file>
+        <file>controls/Global/GlobalSignals.qml</file>
+        <file>pulugins/calibrationHandEye/ui/CalibrationWindow.qml</file>
+        <file>pulugins/calibrationHandEye/ui/ResultWindow.qml</file>
+        <file>pulugins/calibrationHandEye/ui/RobotCheckWindow.qml</file>
+        <file>pulugins/calibrationHandEye/ui/icon/aubo.jpg</file>
+        <file>pulugins/calibrationHandEye/ui/TargetBoardCheckWindow.qml</file>
+        <file>pulugins/calibrationHandEye/ui/icon/chessBoard.png</file>
+        <file>pulugins/calibrationHandEye/ui/icon/circleBoard.png</file>
+        <file>pulugins/calibrationHandEye/ui/icon/concentricCircle.png</file>
+        <file>pulugins/viewPointPlaner/ui/ViewPointPlaner.qml</file>
+        <file>pulugins/viewPointPlaner/ui/plannerWindow.qml</file>
+        <file>pulugins/viewPointPlaner/ui/robotAndTargetCheckWindow.qml</file>
+        <file>pulugins/viewPointPlaner/ui/StepMenu.qml</file>
     </qresource>
 </RCC>

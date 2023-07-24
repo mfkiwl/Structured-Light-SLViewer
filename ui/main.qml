@@ -1,6 +1,6 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
-import QtQml 2.12
+//import QtQml 2.15
 import Qt.labs.platform 1.0
 import QtQuick.Controls 2.12
 import QtGraphicalEffects 1.12
@@ -19,8 +19,8 @@ ApplicationWindow {
     y: Screen.height / 2 - height / 2
     minimumWidth: 720
     minimumHeight: 480
-    width: 1080
-    height: 640
+    width: 1280
+    height: 780
     color: Sys.background
     visible: true
 
@@ -306,12 +306,22 @@ ApplicationWindow {
 
         onOpenCaliTool: {
             pluginLoader.source = "";
-            pluginLoader.source = "qrc:/pulugins/calibrationMaster/ui/calibrationMaster.qml";
+            pluginLoader.source = "qrc:/pulugins/calibrationMaster/ui/CalibrationMaster.qml";
         }
 
         onOpenEncodeTool: {
             pluginLoader.source = "";
-            pluginLoader.source = "qrc:/pulugins/grayPhaseEncoder/ui/grayPhaseEncoder.qml";
+            pluginLoader.source = "qrc:/pulugins/grayPhaseEncoder/ui/GrayPhaseEncoder.qml";
+        }
+
+        onOpenHandEyeTool: {
+            pluginLoader.source = "";
+            pluginLoader.source = "qrc:/pulugins/calibrationHandEye/ui/WelconHandEye.qml";
+        }
+
+        onOpenPlanerTool:　{
+            pluginLoader.source = "";
+            pluginLoader.source = "qrc:/pulugins/viewPointPlaner/ui/ViewPointPlaner.qml";
         }
 
         onChangeCameraPropertyVal: function(propertyName, val, propertyType) {
@@ -492,6 +502,37 @@ ApplicationWindow {
         function onCameraSelected(cameraJsonPath, cameraPropertyJsonPath, cameraName) {
             slCameraEngine.configCamera(cameraJsonPath, cameraName);
             displayBody.cameraJsonSource = cameraPropertyJsonPath;
+        }
+    }
+
+    Connections {
+        target: GlobalSignals
+
+        function onChangeTo2DMode() {
+            GlobalSignals.exposureTime = slCameraEngine.getNumbericalAttribute("ExposureTime");
+            slCameraEngine.changeTo2DMode();
+        }
+
+        function onChangeCameraExposureTime(exposureTime) {
+            GlobalSignals.exposureTime = exposureTime;
+            slCameraEngine.changeCameraExposureTime(exposureTime);
+        }
+
+        function onStartDispaly2d(channel) {
+            slCameraEngine.continueCapture(channel);
+        }
+
+        function onStopDispaly2d(channel) {
+            slCameraEngine.stopCapture(channel);
+        }
+
+        function onSave(index) {
+            var writePath = slCameraEngine.logCurImg(index);
+            GlobalSignals.sucessImgPath(writePath);
+        }
+
+        function onGetIntrisic() {
+            slCameraEngine.initHandEyeCaliIntrin();
         }
     }
 

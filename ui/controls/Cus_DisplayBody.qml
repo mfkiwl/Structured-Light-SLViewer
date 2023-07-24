@@ -36,6 +36,8 @@ Item {
 
     signal openCaliTool
     signal openEncodeTool
+    signal openHandEyeTool
+    signal openPlanerTool
     signal changeCameraPropertyVal(var propertyName, var val, var propertyType)
     signal changeVtkPropertyVal(var propertyName, var val)
 
@@ -289,6 +291,14 @@ Item {
 
         onOpenGrayPhaseTool: {
             openEncodeTool();
+        }
+
+        onOpenHandEyeCalibrationTool: {
+            openHandEyeTool();
+        }
+
+        onOpenViewPointPlannerTool: {
+            openPlanerTool();
         }
     }
 }

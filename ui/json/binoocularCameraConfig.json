@@ -117,7 +117,7 @@
             "type" : "number"
          },
          {
-            "data" : 20000.0,
+            "data" : 60000.0,
             "editable" : 1,
             "title" : "ExposureTime",
             "type" : "number"
